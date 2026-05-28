@@ -1,3 +1,6 @@
+import Navbar from "./components/navbar/Navbar";
+import Hero from "./components/hero/Hero";
+
 const chocolates = [
   {
     name: "Dark Velvet",
@@ -36,41 +39,13 @@ export default function Home() {
     <main className="bg-[#0f0f0f] text-white min-h-screen">
 
       {/* NAVBAR */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-gray-800">
-        <h1 className="text-3xl font-bold tracking-widest text-[#d4a373]">
-          MERGE
-        </h1>
+      <Navbar />
 
-        <div className="hidden md:flex gap-8 text-sm uppercase tracking-wider">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-      </nav>
+      {/* HERO */}
+      <Hero />
 
-      {/* HERO SECTION */}
-      <section className="text-center py-24 px-6">
-        <p className="uppercase tracking-[8px] text-[#d4a373] text-sm">
-          Luxury Chocolate Collection
-        </p>
-
-        <h2 className="text-5xl md:text-7xl font-bold mt-6 leading-tight">
-          Crafted For <br /> Chocolate Lovers
-        </h2>
-
-        <p className="max-w-2xl mx-auto text-gray-400 mt-8 text-lg">
-          Experience handcrafted premium chocolates made with rich cocoa,
-          luxury ingredients, and unforgettable flavor.
-        </p>
-
-        <button className="mt-10 bg-[#d4a373] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition">
-          Explore Collection
-        </button>
-      </section>
-
-      {/* PRODUCTS */}
-      <section className="px-8 py-20">
+      {/* PRODUCTS SECTION */}
+      <section className="px-8 py-24">
         <div className="text-center mb-16">
           <p className="text-[#d4a373] uppercase tracking-[6px] text-sm">
             Featured Chocolates
@@ -81,29 +56,41 @@ export default function Home() {
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* PREMIUM GRID */}
+        <div className="grid md:grid-cols-3 gap-10">
+
           {chocolates.map((item, index) => (
             <div
               key={index}
-              className="bg-[#1a1a1a] rounded-3xl overflow-hidden hover:scale-105 transition duration-300"
+              className="group relative bg-[#141414] rounded-3xl overflow-hidden border border-white/10 transition-all duration-500 hover:scale-[1.03] hover:border-[#d4a373]/50 hover:shadow-[0_0_30px_rgba(212,163,115,0.25)]"
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-[320px] object-cover"
-              />
 
-              <div className="p-6">
+              {/* IMAGE */}
+              <div className="overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-[320px] object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-6 relative z-10">
+
                 <h4 className="text-2xl font-semibold">{item.name}</h4>
 
-                <p className="text-[#d4a373] mt-2">{item.price}</p>
+                <p className="text-[#d4a373] mt-2 text-lg font-medium">
+                  {item.price}
+                </p>
 
-                <button className="mt-6 border border-[#d4a373] text-[#d4a373] px-6 py-3 rounded-full hover:bg-[#d4a373] hover:text-black transition">
+                <button className="mt-6 border border-[#d4a373] text-[#d4a373] px-6 py-3 rounded-full hover:bg-[#d4a373] hover:text-black transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,163,115,0.4)]">
                   View Product
                 </button>
+
               </div>
             </div>
           ))}
+
         </div>
       </section>
 

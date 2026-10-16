@@ -1,47 +1,36 @@
 export default function Hero() {
   return (
-    <section className="relative text-center py-28 px-6 overflow-hidden">
+    <section
+      id="top"
+      className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-black"
+    >
+      {/* Background photo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/cocoa-hero.jpg')" }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/75" />
 
-      {/* Background Glow Layers */}
-      <div className="absolute inset-0 bg-[#0f0f0f]"></div>
-
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#d4a373] opacity-20 blur-[120px] rounded-full"></div>
-
-      <div className="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-[#ffffff] opacity-10 blur-[120px] rounded-full"></div>
-
-      {/* Content */}
-      <div className="relative z-10">
-
-        <p className="uppercase tracking-[12px] text-[#d4a373] text-sm">
-          Luxury Chocolate Collection
-        </p>
-
-        <h1 className="text-5xl md:text-7xl font-bold mt-6 leading-tight">
-          Crafted For <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4a373] to-[#ffffff]">
-            True Chocolate Lovers
-          </span>
+      <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center text-white">
+        <h1 className="text-3xl font-extrabold uppercase leading-tight md:text-5xl">
+          MERGE &mdash;
+          <br />
+          The World of Chocolate, Connected.
         </h1>
 
-        <p className="max-w-2xl mx-auto text-gray-400 mt-8 text-lg leading-8">
-          Experience handcrafted premium chocolates made with rich cocoa,
-          luxury ingredients, and world-class craftsmanship designed to deliver
-          unforgettable taste and elegance.
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 md:text-lg">
+          MERGE is a knowledge platform dedicated to discovering chocolate,
+          learning about cocoa science, and exploring innovations shaping the
+          chocolate industry.
         </p>
 
-        {/* Buttons */}
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-5">
-
-          <button className="bg-[#d4a373] text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-[#d4a373]/30">
-            Explore Collection
-          </button>
-
-          <button className="border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300">
-            View Story
-          </button>
-
-        </div>
-
+        <a
+          href="#discover"
+          className="mt-10 inline-block border-2 border-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] shadow-[6px_6px_0_0_#ffffff] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+        >
+          Explore Chocolate
+        </a>
       </div>
     </section>
   );

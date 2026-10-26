@@ -1,10 +1,4 @@
-const links = [
-  { label: "Discover Chocolate", href: "#discover" },
-  { label: "Learn the Science", href: "#learn" },
-  { label: "Regulations", href: "#regulations" },
-  { label: "Blog", href: "#blog" },
-  { label: "About Us", href: "#about" },
-];
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -24,13 +18,8 @@ export default function Footer() {
             Explore
           </p>
           <ul className="mt-4 space-y-2 text-sm text-neutral-600">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="hover:underline">
-                  {l.label}
-                </a>
-              </li>
-            ))}
+            <li><Link href="/knowledge" className="hover:underline">MERGE Knowledge</Link></li>
+            <li><Link href="/marketplace" className="hover:underline">MERGE Marketplace</Link></li>
           </ul>
         </div>
       </div>

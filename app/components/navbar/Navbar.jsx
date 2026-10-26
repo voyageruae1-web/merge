@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CartLink from "../cart/CartLink";
 
 export default function Navbar() {
   return (
@@ -25,6 +26,7 @@ export default function Navbar() {
             <Link href="/marketplace" className="underline-offset-4 transition hover:text-neutral-900 hover:underline">
               Marketplace
             </Link>
+            <CartLink />
           </nav>
         </div>
       </header>
